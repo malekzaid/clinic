@@ -3,7 +3,7 @@
 
 
 <?php
-if (substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1) == "admin.php") {
+if (substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1) == "receptionist.php") {
 	header("Location: index.php");
 }
 require ("head.php");
@@ -184,69 +184,108 @@ require ("head.php");
 						</div>
 					</div>
 					<!-- /Widget Item -->
-					<!-- modal new patient -->
-					<div class="modal proclinic-modal-lg" id="newPatient" tabindex="-1" role="dialog" aria-hidden="true">
-								<div class="modal-dialog modal-lorvens">
-									<div class="modal-content proclinic-box-shadow2">
-										<div class="modal-header">
-											<h5 class="modal-title">New Case</h5>
-											<span class="ti-close" data-dismiss="modal" aria-label="Close">
-											</span>
-										</div>
-										<div class="modal-body">
-											<form>
-												<div class="form-group">
-													<label for="name"> Patient Name* </label>
-													<input type="text" class="form-control" id="name" placeholder="Patient Name" required>
-												</div>
-												<div class="form-group">
-													<label for="contact"> Patient Contact </label>
-													<input type="text" class="form-control" id="contact" placeholder="Patient Contact">
-												</div>
-												<div class="form-group">
-													<label for="email"> Patient Email </label>
-													<input type="email" class="form-control" id="email" placeholder="Patient Email">
-												</div>
-												<div class="form-group">
-													<label for="city"> Patient City* </label>
-													<input type="text" class="form-control" id="city" placeholder="Patient City" required>
-												</div>
-												<div class="form-group">
-													<label for="gender"> Patient gender* </label>
-													<div class="gender-control">
-														<input type="radio" name="gender" id="male" value="Male" class="gender" required> Male
-														<input type="radio" name="gender" id="female" value="Female"  class="gender"> Female
-														<input type="radio" name="gender" id="other" value="Other"  class="gender"> Other
-													</div>
-												</div>
-												<div class="form-group">
-													<label for="DOB"> Birth Date* </label>
-													<input type="date" class="form-control" name="dob" id="DOB" required>
-												</div>
-												<div class="form-group">
-													<label for="BG"> Blood Group </label>
-													<input type="text" class="form-control" id="BG" name="blood">
-												</div>
-												
-												<button type="button" class="btn btn-lorvens proclinic-bg"> Create Case</button>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
-				</div>
-
+					
 			</div>
 			<!-- /Main Content -->
 		</div>
 		<!-- /Page Content -->
 	</div>
-	<!-- Back to Top -->
-	<a id="back-to-top" href="#" class="back-to-top">
-		<span class="ti-angle-up"></span>
-	</a>
-	<!-- /Back to Top -->
 	
+	<!-- modal new patient -->
+	<div class="modal proclinic-modal-lg" id="newPatient" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lorvens">
+			<div class="modal-content proclinic-box-shadow2">
+				<div class="modal-header">
+					<h5 class="modal-title">New Case</h5>
+					<span class="ti-close" data-dismiss="modal" aria-label="Close" onclick="close1()">
+					</span>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="add-patient.php">
+						<div class="form-group">
+							<label for="name"> Patient Name* </label>
+							<input type="text" name="name" class="form-control" id="name" placeholder="Patient Name" required>
+						</div>
+						<div class="form-group">
+							<label for="contact"> Patient Contact </label>
+							<input type="text" name="contact" class="form-control" id="contact" placeholder="Patient Contact">
+						</div>
+						<div class="form-group">
+							<label for="email"> Patient Email </label>
+							<input type="email" name="email" class="form-control" id="email" placeholder="Patient Email">
+						</div>
+						<div class="form-group">
+							<label for="city"> Patient City* </label>
+							<input type="text" name="city" class="form-control" id="city" placeholder="Patient City" required>
+						</div>
+						<div class="form-group">
+							<label for="gender"> Patient gender* </label>
+							<div class="gender-control">
+								<input type="radio" name="gender" id="male" value="Male" class="gender" required> Male
+								<input type="radio" name="gender" id="female" value="Female"  class="gender"> Female
+								<input type="radio" name="gender" id="other" value="Other"  class="gender"> Other
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="DOB"> Birth Date* </label>
+							<input type="date" name="dob" class="form-control" name="dob" id="DOB" required>
+						</div>
+						<input type="button" class="btn btn-lorvens btnnext proclinic-bg"  value="Next">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal proclinic-modal-lg" id="newPatient2" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lorvens">
+			<div class="modal-content proclinic-box-shadow2">
+				<div class="modal-header">
+					<h5 class="modal-title">New Case</h5>
+					<span class="ti-close" data-dismiss="modal" aria-label="Close" onclick=close1()>
+					</span>
+				</div>
+				<div class="modal-body">
+						<div class="form-group">
+							<label for="BG"> Blood Group </label>
+							<input type="text" class="form-control" id="BG" name="blood">
+						</div>
+						<div class="form-group">
+							<label for="complain"> Complaint* </label>
+							<input type="text" name="complain" class="form-control" id="complain" placeholder="Illness" required>
+						</div>
+						<input type="Submit" class="btn btn-lorvens proclinic-bg" name="submit" value="Create Case">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	
+<!-- Update Patinet Modal -->
+
+<div class="modal proclinic-modal-lg" id="exiPatient" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lorvens">
+			<div class="modal-content proclinic-box-shadow2">
+				<div class="modal-header">
+					<h5 class="modal-title">Exisitng Case</h5>
+					<span class="ti-close" data-dismiss="modal" aria-label="Close" onclick="close1()">
+					</span>
+				</div>
+				<div class="modal-body">
+					<form method="POST" action="exipatient.php">
+						<div class="form-group">
+							<label for="id"> Case ID* </label>
+							<input type="text" name="id" class="form-control" id="id" placeholder="Case ID" required>
+						</div>
+						<div class="form-group">
+							<label for="complain"> Complaint* </label>
+							<input type="text" name="complain" class="form-control" id="complain" placeholder="Illness" required>
+						</div>
+						<input type="Submit" class="btn btn-lorvens proclinic-bg" name="submit" value=" Create Appointment">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Jquery Library-->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<!-- Popper Library-->

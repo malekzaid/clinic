@@ -3,7 +3,7 @@
 
 
 <?php
-if (substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1) == "admin.php") {
+if (substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1) == "doctorDash.php") {
 	header("Location: index.php");
 }
 require ("head.php");

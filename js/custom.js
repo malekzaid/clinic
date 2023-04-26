@@ -51,5 +51,17 @@ $(".btnupd").on('click', function () {
 
 $(".btnnew").on('click', function () {
     $("#newPatient").show();
-
 });
+$(".btnnext").on('click', function () {
+    $("#newPatient").hide();
+    $("#newPatient2").show();
+});
+$(".btnexist").on('click', function () {
+    $("#exiPatient").show();
+});
+function close1() {
+    $("#newPatient").hide();
+    $("#newPatient2").hide();
+    $("#exiPatient").hide();
+
+}

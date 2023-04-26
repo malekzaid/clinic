@@ -1,0 +1,23 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+}
+
+.card-header h3 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.card-body p {
+    margin-bottom: 10px;
+}
+
+.card-footer p {
+    font-size: 12px;
+    margin-bottom: 0;
+    text-align: right;
+}

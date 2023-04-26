@@ -95,15 +95,17 @@
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="staff_type">Role</label>
+                                                            <div class="d-flex">
                                                             <input type="radio" name="role" id="staff_typeD" value="doctor" required> Doctor
                                                             <input type="radio" name="role" id="staff_typeR" value="receptionist"> Receptionist
+                                                            </div>
                                                         </div>
                                                     </div>      
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default"
                                                     data-dismiss="modal">Close</button>
-                                                <input type="submit" class="btn btn-primary" name="addstaff" value="Save changes">
+                                                <input type="submit" class="btn btn-primary" name="addstaff" value="Add Staff">
                                                 </form>
                                             </div>
                                         </div>
