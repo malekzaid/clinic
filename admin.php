@@ -2,11 +2,11 @@
 <html>
 
 
-<?php 
-if (substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1) == "admin.php") {
+<?php
+if (substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1) == "admin.php") {
 	header("Location: index.php");
 }
-require ("head.php");
+require("head.php");
 ?>
 
 <body>
@@ -21,15 +21,15 @@ require ("head.php");
 
 	<div class="wrapper">
 		<!-- Sidebar -->
-        <?php 
-	        include_once ("admin-nav.html");
-        ?>
+		<?php
+		include_once("admin-nav.html");
+		?>
 		<!-- /Sidebar -->
 		<!-- Page Content -->
 		<div id="content">
 			<!-- Top Navigation -->
 			<?php
-				include_once ("top-nav.php");
+			include_once("top-nav.php");
 			?>
 			<!-- /Top Navigation -->
 			<!-- Breadcrumb -->
@@ -190,7 +190,7 @@ require ("head.php");
 		<span class="ti-angle-up"></span>
 	</a>
 	<!-- /Back to Top -->
-	
+
 	<!-- Jquery Library-->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<!-- Popper Library-->
@@ -208,4 +208,5 @@ require ("head.php");
 
 
 <!-- Mirrored from www.konnectplugins.com/proclinic/Vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Mar 2023 05:55:43 GMT -->
+
 </html>

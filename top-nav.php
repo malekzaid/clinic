@@ -11,15 +11,17 @@
             <li class="nav-item">
                 <span title="Fullscreen" class="ti-fullscreen fullscreen"></span>
             </li>
-                                
+
             <li class="nav-item">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">
                     <span class="ti-user"></span>
                 </a>
                 <div class="dropdown-menu proclinic-box-shadow2 profile animated flipInY">
-                    <h5><?php  echo $_SESSION['name']; ?></h5>
-                    
+                    <h5>
+                        <?php echo $_SESSION['name']; ?>
+                    </h5>
+
                     <a class="dropdown-item" href="logout.php">
                         <span class="ti-power-off"></span> Logout</a>
                 </div>

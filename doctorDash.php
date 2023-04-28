@@ -3,7 +3,7 @@
 
 
 <?php
-require ('connection.php');
+require('connection.php');
 if (substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1) == "doctorDash.php") {
 	header("Location: index.php");
 }
@@ -119,21 +119,30 @@ require("head.php");
 									</thead>
 									<tbody>
 										<?php
-											$query="SELECT p.name,tk.id,tk.status FROM `token` as tk left join appointments as a on tk.ap_id=a.id LEFT join patient as p on a.p_id=p.id where tk.status='pending' order by tk.id";
-											$result = $conn->query($query);
-											while($row = $result->fetch_assoc()){
-										?>	
-										<tr>
-											<td><?=$row['id']?></td>
-											<td><?=$row['name']?></td>
-											<td><?=$row['status']?></td>
-											<td><button type="button" class="call btn btn-success" id="<?=$row['id']?>"> Call Patient</button>
-											<button type="button" class="cancel btn btn-danger" id="<?=$row['id']?>">Cancel</button></td>
-										</tr>		
-										<?php
-											}
+										$query = "SELECT p.name,tk.id,tk.status FROM `token` as tk left join appointments as a on tk.ap_id=a.id LEFT join patient as p on a.p_id=p.id where tk.status=0 order by tk.id";
+										$result = $conn->query($query);
+										while ($row = $result->fetch_assoc()) {
+											?>
+											<tr>
+												<td>
+													<?= $row['id'] ?>
+												</td>
+												<td>
+													<?= $row['name'] ?>
+												</td>
+												<td>
+													Pending
+												</td>
+												<td><button type="button" class="call btn btn-success" id="<?= $row['id'] ?>">
+														Call Patient</button>
+													<button type="button" class="cancel btn btn-danger"
+														id="<?= $row['id'] ?>">Cancel</button>
+												</td>
+											</tr>
+											<?php
+										}
 										?>
-										
+
 									</tbody>
 								</table>
 							</div>
@@ -147,7 +156,7 @@ require("head.php");
 							<h3 class="widget-title">Previous Appointments</h3>
 							<div class="table-responsive">
 								<table class="table table-bordered">
-								<thead>
+									<thead>
 										<tr>
 											<th>Token No.</th>
 											<th>Patient Name</th>
@@ -157,30 +166,36 @@ require("head.php");
 									</thead>
 									<tbody>
 										<?php
-											$query="SELECT p.name,tk.id,tk.status FROM `token` as tk left join appointments as a on tk.ap_id=a.id LEFT join patient as p on a.p_id=p.id where tk.status!='pending' order by tk.id desc";
-											$result = $conn->query($query);
-											while($row = $result->fetch_assoc()){
-										?>
-										<tr>
-											<td><?=$row['id']?></td>
-											<td><?=$row['name']?></td>
-											<td><?=$row['status']?></td>
-											<td>
-												<?php
-													if($row['status']=="consult"){
-														?><button type="button" class="examine btn btn-success" id="<?=$row['id']?>"> Add Examination</button>
+										$query = "SELECT p.name,tk.id,tk.status FROM `token` as tk left join appointments as a on tk.ap_id=a.id LEFT join patient as p on a.p_id=p.id where tk.status!=0 order by tk.id desc";
+										$result = $conn->query($query);
+										while ($row = $result->fetch_assoc()) {
+											?>
+											<tr>
+												<td>
+													<?= $row['id'] ?>
+												</td>
+												<td>
+													<?= $row['name'] ?>
+												</td>
+												<td>
+													<?= $row['status'] == '1' ? "Consulting" : 'Completed' ?>
+												</td>
+												<td>
+													<?php
+													if ($row['status'] == 1) {
+														?><button type="button" class="examine btn btn-success" id="<?= $row['id'] ?>"> Add Examination</button>
 														<?php
 													} else {
-														?><button type="button" class="view btn btn-success" id="<?=$row['id']?>"> View Details</button>
+														?><button type="button" class="view btn btn-success" id="<?= $row['id'] ?>"> View Details</button>
 														<?php
 													}
-												?>
-											</td>
-										</tr>		
-										<?php
-											}
+													?>
+												</td>
+											</tr>
+											<?php
+										}
 										?>
-										
+
 									</tbody>
 								</table>
 							</div>
@@ -196,9 +211,7 @@ require("head.php");
 		<!-- /Page Content -->
 	</div>
 	<!-- Back to Top -->
-	<a id="back-to-top"
-		href="#"
-		class="back-to-top">
+	<a id="back-to-top" href="#" class="back-to-top">
 		<span class="ti-angle-up"></span>
 	</a>
 	<!-- /Back to Top -->

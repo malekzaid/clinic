@@ -105,7 +105,8 @@
                                         <div class="modal-body">
                                             <form>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" id="search-term" placeholder="Type text here">
+                                                    <input type="text" class="form-control" id="search-term"
+                                                        placeholder="Type text here">
                                                     <button type="button" class="btn btn-lorvens proclinic-bg">
                                                         <span class="ti-location-arrow"></span> Search</button>
                                                 </div>
@@ -116,7 +117,8 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">
                                 <span class="ti-announcement"></span>
                             </a>
                             <div class="dropdown-menu proclinic-box-shadow2 notifications animated flipInY">
@@ -132,7 +134,8 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">
                                 <span class="ti-user"></span>
                             </a>
                             <div class="dropdown-menu proclinic-box-shadow2 profile animated flipInY">
@@ -231,7 +234,8 @@
                                             <a class="page-link" href="#"><span class="ti-file"></span> PDF</a>
                                         </li>
                                         <li class="page-item">
-                                            <a class="page-link" href="#"><span class="ti-align-justify"></span> Excel</a>
+                                            <a class="page-link" href="#"><span class="ti-align-justify"></span>
+                                                Excel</a>
                                         </li>
                                     </ul>
                                 </nav>

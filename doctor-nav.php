@@ -3,7 +3,7 @@
         <a href="index.html"><img src="images/logo.png" class="logo" alt="logo"></a>
     </div>
     <ul class="list-unstyled components">
-        
+
         <li>
             <a href="#nav-patients" data-toggle="collapse" aria-expanded="false">
                 <span class="ti-wheelchair"></span> Patients
@@ -43,15 +43,15 @@
             </ul>
         </li>
 
-    
-    <div class="nav-help animated fadeIn">
-        <h5><span class="ti-comments"></span> Need Help</h5>
-        <h6>
-            <span class="ti-mobile"></span> +91-9879228567
-        </h6>
-        <h6>
-            <span class="ti-email"></span> support@ayushya.co.in
-        </h6>
-        <p class="copyright-text">Copy rights &copy; 2023</p>
-    </div>
+
+        <div class="nav-help animated fadeIn">
+            <h5><span class="ti-comments"></span> Need Help</h5>
+            <h6>
+                <span class="ti-mobile"></span> +91-9879228567
+            </h6>
+            <h6>
+                <span class="ti-email"></span> support@ayushya.co.in
+            </h6>
+            <p class="copyright-text">Copy rights &copy; 2023</p>
+        </div>
 </nav>

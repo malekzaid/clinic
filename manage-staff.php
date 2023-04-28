@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 
-<?php 
-    session_start();
-    if (!isset($_SESSION['email']) || !isset($_SESSION['role']) || $_SESSION['role']!='admin') {
-        header('Location: login.php');
-    }
-	require ("head.php");
+<?php
+session_start();
+if (!isset($_SESSION['email']) || !isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
+    header('Location: login.php');
+}
+require("head.php");
 ?>
 
 <body>
@@ -20,16 +20,16 @@
     <!--/Pre Loader -->
     <div class="wrapper">
         <!-- Sidebar -->
-        <?php 
-	        include_once ("admin-nav.html");
+        <?php
+        include_once("admin-nav.html");
         ?>
         <!-- /Sidebar -->
         <!-- Page Content -->
         <div id="content">
             <!-- Top Navigation -->
-                
-            <?php 
-	            include_once ("top-nav.php");
+
+            <?php
+            include_once("top-nav.php");
             ?>
             <!-- /Top Navigation -->
             <!-- Breadcrumb -->
@@ -77,35 +77,41 @@
                                                         <div class="form-group col-md-12">
                                                             <label for="staff_name">Name</label>
                                                             <input type="text" class="form-control"
-                                                                placeholder="Staff name" id="staff_name" name="name" required>
+                                                                placeholder="Staff name" id="staff_name" name="name"
+                                                                required>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="phone">Phone</label>
-                                                            <input type="number" name="contact" placeholder="Phone" class="form-control"
-                                                                id="phone" min="6000000000" max="9999999999" required>
+                                                            <input type="number" name="contact" placeholder="Phone"
+                                                                class="form-control" id="phone" min="6000000000"
+                                                                max="9999999999" required>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="email">Email</label>
-                                                            <input type="email" placeholder="Email" name="email" class="form-control"
-                                                                id="Email" required>
+                                                            <input type="email" placeholder="Email" name="email"
+                                                                class="form-control" id="Email" required>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="Password">Password</label>
-                                                            <input type="Password" class="form-control" name="pass" id="Password" placeholder="Password" required>
+                                                            <input type="Password" class="form-control" name="pass"
+                                                                id="Password" placeholder="Password" required>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="staff_type">Role</label>
                                                             <div class="d-flex">
-                                                            <input type="radio" name="role" id="staff_typeD" value="doctor" required> Doctor
-                                                            <input type="radio" name="role" id="staff_typeR" value="receptionist"> Receptionist
+                                                                <input type="radio" name="role" id="staff_typeD"
+                                                                    value="doctor" required> Doctor
+                                                                <input type="radio" name="role" id="staff_typeR"
+                                                                    value="receptionist"> Receptionist
                                                             </div>
                                                         </div>
-                                                    </div>      
+                                                    </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default"
                                                     data-dismiss="modal">Close</button>
-                                                <input type="submit" class="btn btn-primary" name="addstaff" value="Add Staff">
+                                                <input type="submit" class="btn btn-primary" name="addstaff"
+                                                    value="Add Staff">
                                                 </form>
                                             </div>
                                         </div>
@@ -128,33 +134,40 @@
                                                         <div class="form-group col-md-12">
                                                             <label for="ustaff_name">Name</label>
                                                             <input type="text" class="form-control"
-                                                                placeholder="Staff name" id="ustaff_name" name="name" required>
+                                                                placeholder="Staff name" id="ustaff_name" name="name"
+                                                                required>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="uphone">Phone</label>
-                                                            <input type="number" name="contact" placeholder="Phone" class="form-control"
-                                                                id="uphone" min="6000000000" max="9999999999" required>
+                                                            <input type="number" name="contact" placeholder="Phone"
+                                                                class="form-control" id="uphone" min="6000000000"
+                                                                max="9999999999" required>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="uemail">Email</label>
-                                                            <input type="email" placeholder="Email" name="email" class="form-control"
-                                                                id="uemail" required>
+                                                            <input type="email" placeholder="Email" name="email"
+                                                                class="form-control" id="uemail" required>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="uPassword">Password</label>
-                                                            <input type="Password" class="form-control" name="pass" id="uPassword" placeholder="Can't change password here" readonly>
+                                                            <input type="Password" class="form-control" name="pass"
+                                                                id="uPassword" placeholder="Can't change password here"
+                                                                readonly>
                                                         </div>
                                                         <div class="form-group col-md-12">
                                                             <label for="ustaff_type">Role</label>
-                                                            <input type="radio" name="role" id="ustaff_typeD" value="doctor" required> Doctor
-                                                            <input type="radio" name="role" id="ustaff_typeR" value="receptionist"> Receptionist
+                                                            <input type="radio" name="role" id="ustaff_typeD"
+                                                                value="doctor" required> Doctor
+                                                            <input type="radio" name="role" id="ustaff_typeR"
+                                                                value="receptionist"> Receptionist
                                                         </div>
-                                                    </div>      
+                                                    </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default"
                                                     data-dismiss="modal">Close</button>
-                                                <input type="submit" class="btn btn-primary" name="addstaff" value="Update changes">
+                                                <input type="submit" class="btn btn-primary" name="addstaff"
+                                                    value="Update changes">
                                                 </form>
                                             </div>
                                         </div>
@@ -262,7 +275,7 @@
         })
     });
 
-    
+
 </script>
 
 </html>
