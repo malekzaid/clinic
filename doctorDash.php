@@ -3,10 +3,11 @@
 
 
 <?php
-if (substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1) == "doctorDash.php") {
+require ('connection.php');
+if (substr($_SERVER["SCRIPT_NAME"], strrpos($_SERVER["SCRIPT_NAME"], "/") + 1) == "doctorDash.php") {
 	header("Location: index.php");
 }
-require ("head.php");
+require("head.php");
 ?>
 
 <body>
@@ -18,18 +19,18 @@ require ("head.php");
 		</div>
 	</div>
 	<!--/Pre Loader -->
-	
+
 	<div class="wrapper">
 		<!-- Sidebar -->
 		<?php
-		include_once ("doctor-nav.php");
+		include_once("doctor-nav.php");
 		?>
 		<!-- /Sidebar -->
 		<!-- Page Content -->
 		<div id="content">
 			<!-- Top Navigation -->
 			<?php
-				include_once ("top-nav.php");
+			include_once("top-nav.php");
 			?>
 			<!-- /Top Navigation -->
 			<!-- Breadcrumb -->
@@ -101,224 +102,85 @@ require ("head.php");
 					<!-- /Widget Item -->
 				</div>
 
-
-				<div class="row">
-					<!-- Widget Item -->
-					<div class="col-md-12">
-						<div class="widget-area-2 proclinic-box-shadow">
-							<h3 class="widget-title">Appointments</h3>
-							<div class="table-responsive">
-								<table class="table table-bordered table-striped">
-									<thead>
-										<tr>
-											<th>Patient Name</th>
-											<th>Doctor</th>
-											<th>Check-Up</th>
-											<th>Date</th>
-											<th>Time</th>
-											<th>Status</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Rajesh</td>
-											<td>Manoj Kumar</td>
-											<td>Dental</td>
-											<td>12-10-2018</td>
-											<td>12:10PM</td>
-											<td>
-												<span class="badge badge-success">Completed</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Riya</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:10PM</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Rajesh</td>
-											<td>Manoj Kumar</td>
-											<td>Dental</td>
-											<td>12-10-2018</td>
-											<td>12:10PM</td>
-											<td>
-												<span class="badge badge-success">Completed</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Riya</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:10PM</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-                                        <tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-                                            <span class="badge badge-warning">Pending</span>
-											</td>
-										</tr>
-                                        <tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-                                        <tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-                                        <tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-                                            <span class="badge badge-warning">Pending</span>
-											</td>
-										</tr>
-                                        <tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-                                        <tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-                                        <tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-                                        <tr>
-											<td>Siri</td>
-											<td>Daniel </td>
-											<td>Ortho</td>
-											<td>12-10-2018</td>
-											<td>1:30PM</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-					<!-- /Widget Item -->
-				</div>
-
 				<div class="row">
 					<!-- Widget Item -->
 					<div class="col-sm-6">
 						<div class="widget-area-2 proclinic-box-shadow">
-							<h3 class="widget-title">Appointments Status</h3>
-							<div id="donutMorris" class="chart-home"></div>
+							<h3 class="widget-title">Next Appointments</h3>
+							<div class="table-responsive">
+								<table class="table table1 table-bordered">
+									<thead>
+										<tr>
+											<th>Token No.</th>
+											<th>Patient Name</th>
+											<th>Status</th>
+											<th>Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+											$query="SELECT p.name,tk.id,tk.status FROM `token` as tk left join appointments as a on tk.ap_id=a.id LEFT join patient as p on a.p_id=p.id where tk.status='pending' order by tk.id";
+											$result = $conn->query($query);
+											while($row = $result->fetch_assoc()){
+										?>	
+										<tr>
+											<td><?=$row['id']?></td>
+											<td><?=$row['name']?></td>
+											<td><?=$row['status']?></td>
+											<td><button type="button" class="call btn btn-success" id="<?=$row['id']?>"> Call Patient</button>
+											<button type="button" class="cancel btn btn-danger" id="<?=$row['id']?>">Cancel</button></td>
+										</tr>		
+										<?php
+											}
+										?>
+										
+									</tbody>
+								</table>
+							</div>
+
 						</div>
 					</div>
 					<!-- /Widget Item -->
 					<!-- Widget Item -->
 					<div class="col-md-6">
 						<div class="widget-area-2 progress-status proclinic-box-shadow">
-							<h3 class="widget-title">Doctors Availability</h3>
+							<h3 class="widget-title">Previous Appointments</h3>
 							<div class="table-responsive">
 								<table class="table table-bordered">
-									<thead>
+								<thead>
 										<tr>
-											<th>Doctor</th>
-											<th>Speciality</th>
-											<th>Availability</th>
+											<th>Token No.</th>
+											<th>Patient Name</th>
+											<th>Status</th>
+											<th>Action</th>
 										</tr>
 									</thead>
 									<tbody>
+										<?php
+											$query="SELECT p.name,tk.id,tk.status FROM `token` as tk left join appointments as a on tk.ap_id=a.id LEFT join patient as p on a.p_id=p.id where tk.status!='pending' order by tk.id desc";
+											$result = $conn->query($query);
+											while($row = $result->fetch_assoc()){
+										?>
 										<tr>
-											<td>Rajesh</td>
-											<td>Dental</td>
+											<td><?=$row['id']?></td>
+											<td><?=$row['name']?></td>
+											<td><?=$row['status']?></td>
 											<td>
-												<span class="badge badge-success">Available</span>
+												<?php
+													if($row['status']=="consult"){
+														?><button type="button" class="examine btn btn-success" id="<?=$row['id']?>"> Add Examination</button>
+														<?php
+													} else {
+														?><button type="button" class="view btn btn-success" id="<?=$row['id']?>"> View Details</button>
+														<?php
+													}
+												?>
 											</td>
-										</tr>
-										<tr>
-											<td>Riya</td>
-											<td>Ortho</td>
-											<td>
-												<span class="badge badge-warning">On Leave</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Siri</td>
-											<td>Skin</td>
-											<td>
-												<span class="badge badge-danger">Not Available</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Rajesh</td>
-											<td>Dental</td>
-											<td>
-												<span class="badge badge-success">Available</span>
-											</td>
-										</tr>
+										</tr>		
+										<?php
+											}
+										?>
+										
 									</tbody>
 								</table>
 							</div>
@@ -326,7 +188,6 @@ require ("head.php");
 						</div>
 					</div>
 					<!-- /Widget Item -->
-
 				</div>
 
 			</div>
@@ -335,11 +196,13 @@ require ("head.php");
 		<!-- /Page Content -->
 	</div>
 	<!-- Back to Top -->
-	<a id="back-to-top" href="#" class="back-to-top">
+	<a id="back-to-top"
+		href="#"
+		class="back-to-top">
 		<span class="ti-angle-up"></span>
 	</a>
 	<!-- /Back to Top -->
-	
+
 	<!-- Jquery Library-->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<!-- Popper Library-->
@@ -357,4 +220,5 @@ require ("head.php");
 
 
 <!-- Mirrored from www.konnectplugins.com/proclinic/Vertical/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 20 Mar 2023 05:55:43 GMT -->
+
 </html>

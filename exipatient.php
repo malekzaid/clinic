@@ -4,15 +4,13 @@ if(isset($_POST['submit']))
     require("connection.php");
     extract($_POST);
 
-    $query="select name from patient where id= $id";
+    $query="select * from appointments where id= $id";
     $result = $conn->query($query);
     $data= $result->fetch_assoc();
     if(!empty($data)){
-        $query2="insert into appointments(p_id,doc_id,complaint) values($id,3,'$complain')";
-        $result2 = $conn->query($query2);
-        if($result){
+        $query2="insert into token(ap_id,status) values($id,'pending')";
+        $result2 = $conn->query($query2);    
         header("Location: index.php");
-        }
     }
     else{
         print_r( $data);

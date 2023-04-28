@@ -10,16 +10,16 @@
             </a>
             <ul class="collapse list-unstyled" id="nav-patients">
                 <li>
-                    <a href="add-patient.html">Add Patient</a>
+                    <a href="index.php">Add Patient</a>
                 </li>
                 <li>
-                    <a href="patients.html">All Patients</a>
+                    <a href="index.php">All Patients</a>
                 </li>
                 <li>
-                    <a href="about-patient.html">Patient Details</a>
+                    <a href="index.php">Patient Details</a>
                 </li>
                 <li>
-                    <a href="edit-patient.html">Edit Patient</a>
+                    <a href="index.php">Edit Patient</a>
                 </li>
             </ul>
         </li>
@@ -29,16 +29,16 @@
             </a>
             <ul class="collapse list-unstyled" id="nav-appointment">
                 <li>
-                    <a href="add-appointment.html">Add Appointment</a>
+                    <a href="index.php">Add Appointment</a>
                 </li>
                 <li>
-                    <a href="appointments.html">All Appointments</a>
+                    <a href="index.php">All Appointments</a>
                 </li>
                 <li>
-                    <a href="about-appointment.html">Appointment Details</a>
+                    <a href="index.php">Appointment Details</a>
                 </li>
                 <li>
-                    <a href="edit-appointment.html">Edit Appointment</a>
+                    <a href="index.php">Edit Appointment</a>
                 </li>
             </ul>
         </li>

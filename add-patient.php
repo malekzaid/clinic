@@ -10,8 +10,13 @@ if(isset($_POST['submit']))
         $id=mysqli_insert_id($conn);
         $query2="insert into appointments(p_id,doc_id,complaint) values($id,3,'$complain')";
         $result2 = $conn->query($query2);
-        if($result){
-        header("Location: printcard.php?id=$id&name=$name&gender=$gender&dob=$dob&contact=$contact&blood=$blood");
+        if($result2){
+            $id=mysqli_insert_id($conn);
+            $query3="insert into token(ap_id,status) values($id,'pending')";
+            $result3 = $conn->query($query3);
+            if($result3){
+                header("Location: printcard.php?id=$id&name=$name&gender=$gender&dob=$dob&contact=$contact&blood=$blood");
+            }
         }
     }
 }

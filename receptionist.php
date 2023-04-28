@@ -3,9 +3,20 @@
 
 
 <?php
+require('connection.php');
 if (substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1) == "receptionist.php") {
 	header("Location: index.php");
 }
+$query="select count(*) from patient";
+$result = $conn->query($query);
+$data= $result->fetch_array();
+$patients = $data[0];
+
+$query="select count(*) from token";
+$result = $conn->query($query);
+$data= $result->fetch_array();
+$token = $data[0];
+
 require ("head.php");
 ?>
 
@@ -65,7 +76,7 @@ require ("head.php");
 							</div>
 							<div class="widget-right">
 								<h4 class="wiget-title">Patients</h4>
-								<span class="numeric color-red">348</span>
+								<span class="numeric color-red"><?=$patients?></span>
 								<p class="inc-dec mb-0"><span class="ti-angle-up"></span> +20% Increased</p>
 							</div>
 						</div>
@@ -78,9 +89,9 @@ require ("head.php");
 								<span class="ti-bar-chart"></span>
 							</div>
 							<div class="widget-right">
-								<h4 class="wiget-title">Appointments</h4>
-								<span class="numeric color-green">1585</span>
-								<p class="inc-dec mb-0"><span class="ti-angle-down"></span> -15% Decreased</p>
+								<h4 class="wiget-title">Appointments Today</h4>
+								<span class="numeric color-green"><?=$token?></span>
+								<p class="inc-dec mb-0"><span class="ti-angle-up"></span> +10% Increased</p>
 							</div>
 						</div>
 					</div>
@@ -93,8 +104,8 @@ require ("head.php");
 							</div>
 							<div class="widget-right">
 								<h4 class="wiget-title">Total Revenue</h4>
-								<span class="numeric color-yellow">$7300</span>
-								<p class="inc-dec mb-0"><span class="ti-angle-up"></span> +10% Increased</p>
+								<span class="numeric color-yellow">$0</span>
+								<p class="inc-dec mb-0"><span class="ti-angle-down"></span> -15% Decreased</p>
 							</div>
 						</div>
 					</div>
@@ -109,7 +120,7 @@ require ("head.php");
 					<!-- Widget Item -->
 					<div class="col-sm-6">
 						<div class="widget-area-2 proclinic-box-shadow">
-							<h3 class="widget-title">Next Appointment</h3>
+							<h3 class="widget-title">Next Appointments</h3>
 							<div class="table-responsive">
 								<table class="table table1 table-bordered">
 									<thead>
@@ -120,13 +131,19 @@ require ("head.php");
 										</tr>
 									</thead>
 									<tbody>
+										<?php
+											$query="SELECT p.name,tk.id,tk.status FROM `token` as tk left join appointments as a on tk.ap_id=a.id LEFT join patient as p on a.p_id=p.id where tk.status='pending' order by tk.id";
+											$result = $conn->query($query);
+											while($row = $result->fetch_assoc()){
+										?>	
 										<tr>
-											<td>Rajesh</td>
-											<td>Dental</td>
-											<td>
-												<span class="badge badge-success">Available</span>
-											</td>
-										</tr>
+											<td><?=$row['id']?></td>
+											<td><?=$row['name']?></td>
+											<td><?=$row['status']?></td>
+										</tr>		
+										<?php
+											}
+										?>
 										
 									</tbody>
 								</table>
@@ -138,45 +155,31 @@ require ("head.php");
 					<!-- Widget Item -->
 					<div class="col-md-6">
 						<div class="widget-area-2 progress-status proclinic-box-shadow">
-							<h3 class="widget-title">Doctors Availability</h3>
+							<h3 class="widget-title">Previous Appointments</h3>
 							<div class="table-responsive">
 								<table class="table table-bordered">
-									<thead>
+								<thead>
 										<tr>
-											<th>Doctor</th>
-											<th>Speciality</th>
-											<th>Availability</th>
+											<th>Token No.</th>
+											<th>Patient Name</th>
+											<th>Status</th>
 										</tr>
 									</thead>
 									<tbody>
+										<?php
+											$query="SELECT p.name,tk.id,tk.status FROM `token` as tk left join appointments as a on tk.ap_id=a.id LEFT join patient as p on a.p_id=p.id where tk.status!='pending' order by tk.id desc";
+											$result = $conn->query($query);
+											while($row = $result->fetch_assoc()){
+										?>	
 										<tr>
-											<td>Rajesh</td>
-											<td>Dental</td>
-											<td>
-												<span class="badge badge-success">Available</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Riya</td>
-											<td>Ortho</td>
-											<td>
-												<span class="badge badge-warning">On Leave</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Siri</td>
-											<td>Skin</td>
-											<td>
-												<span class="badge badge-danger">Not Available</span>
-											</td>
-										</tr>
-										<tr>
-											<td>Rajesh</td>
-											<td>Dental</td>
-											<td>
-												<span class="badge badge-success">Available</span>
-											</td>
-										</tr>
+											<td><?=$row['id']?></td>
+											<td><?=$row['name']?></td>
+											<td><?=$row['status']?></td>
+										</tr>		
+										<?php
+											}
+										?>
+										
 									</tbody>
 								</table>
 							</div>
