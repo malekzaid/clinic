@@ -39,7 +39,7 @@ if (isset($_GET['name'])) {
                 </p>
             </div>
             <div class="card-footer">
-                <p>Generated on: 17-Apr-2023</p>
+                <p>Generated on: <?= Date("d-m-Y")?></p>
             </div>
             <script>window.print()
                 window.onafterprint = function () {
